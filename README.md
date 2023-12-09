@@ -33,10 +33,6 @@ dependencies: {
 <details>
 <summary>API </summary>
 
-- Base URL
-
-  > `https://foodapp-5a4iggaygq-et.a.run.app`
-
 - Endpoint
   `Get`
 
