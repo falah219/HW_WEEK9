@@ -1,6 +1,9 @@
 const { User } = require('../models');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const dotenv = require('dotenv');
+dotenv.config();
+
 
 class UserController {
 
@@ -41,7 +44,7 @@ class UserController {
           if (!passwordMatch) {
             throw {name: 'InvalidCredential'};
           }
-          const token = jwt.sign({id: user.id},'secret');
+          const token = jwt.sign({id: user.id}, process.env.SECRET_KEY);
           // res.status(200).json({ token });
           res
             .cookie('access_token', token, {http_only:true})
